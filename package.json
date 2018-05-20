@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "fusioncharts": "^3.12.2",
+    "npm": "^6.0.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-fusioncharts": "^1.0.5",
     "react-scripts": "1.1.4"
   },
   "scripts": {

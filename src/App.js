@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import ReactFC from 'react-fusioncharts';
 import './App.css';
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+    var chartData = {
+        chart: {},
+        data: [{value: 500}, {value: 600}, {value: 700}]
+    };
+    return <ReactFC
+           type = "Column2D"
+           className = "fc-column2d"
+           dataFormat = "JSON"
+           dataSource = {chartData}/>;
   }
 }
 
