@@ -15,7 +15,7 @@ class App extends Component {
         var chartDataList = [];
         this.state.data.forEach(
             function(timeSeries) {
-                chartDataList.push({label: timeSeries.tradingDay, value: timeSeries.closingPrice});
+                chartDataList.push({label: timeSeries.tradingDay.split('T')[0], value: timeSeries.closingPrice});
             }
         );
 
