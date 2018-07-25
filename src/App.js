@@ -31,94 +31,111 @@ class App extends Component {
 //               dataFormat = "JSON"
 //               dataSource = {chartData}/>;
 
-          var data = [{
-               "y": 14.42,
-               "x": 18.88
-             }, {
-               "y": 10.54,
-               "x": 17.29
-             }, {
-               "y": 12.51,
-               "x": 4.72
-             }, {
-               "y": 10.89,
-               "x": 18.94
-             }, {
-               "y": 9.69,
-               "x": 39.87
-             }, {
-               "y": 8.74,
-               "x": 38.88
-             }, {
-               "y": 6.34,
-               "x": 31.3
-             }, {
-               "y": 6.01,
-               "x": 22.06
-             }, {
-               "y": 7.49,
-               "x": 36.19
-             }, {
-               "y": -7.93,
-               "x": 70.24
-             }, {
-               "y": -6.87,
-               "x": 63.67
-             }];
+//          var data = [{
+//               "y": 14.42,
+//               "x": 18.88
+//             }, {
+//               "y": 10.54,
+//               "x": 17.29
+//             }, {
+//               "y": 12.51,
+//               "x": 4.72
+//             }, {
+//               "y": 10.89,
+//               "x": 18.94
+//             }, {
+//               "y": 9.69,
+//               "x": 39.87
+//             }, {
+//               "y": 8.74,
+//               "x": 38.88
+//             }, {
+//               "y": 6.34,
+//               "x": 31.3
+//             }, {
+//               "y": 6.01,
+//               "x": 22.06
+//             }, {
+//               "y": 7.49,
+//               "x": 36.19
+//             }, {
+//               "y": -7.93,
+//               "x": 70.24
+//             }, {
+//               "y": -6.87,
+//               "x": 63.67
+//             }];
 
           var dataSource = {
-              chart: {"caption": "Selectivity and Returns of majors",
-                      "subcaption": "in higher education",
-                      "yaxisname": "20 year average-annual return on degree, %",
-                      "xaxisname": "Admission rate, %",
+              chart: {"caption": "K-means clustering",
+                "bubbleScale": 0.25,
+                "plotTooltext": "$name ; cluster:  $zvalue%",
+//                      "subcaption": "in higher education",
+//                      "yaxisname": "20 year average-annual return on degree, %",
+//                      "xaxisname": "Admission rate, %",
                       "anchorBgColor": "#FF0000",
                     "xAxisMinValue": "23",
                     "xAxisMaxValue": "95",
                       "yaxismaxvalue": "25",
                       "showzeroplane": "0",
                       "yaxisminvalue": "-15",
-                      "anchorradius": "2",
-                      "plotTooltext": "<div id='valueDiv'><b>$seriesName</b>, Admission rate % : <b>$xDataValue</b>, Return % : <b>$yDataValue</b></div>"},
-              dataset: [{data: [{
+                      "anchorradius": "1",
+                "showValues":"1",
+//                      "plotTooltext": "<div id='valueDiv'><b>$seriesName</b>, Admission rate % : <b>$xDataValue</b>, Return % : <b>$yDataValue</b></div>"
+                      },
+              dataset: [
+              {data: [{
                   "y": 14.42,
-                  "x": 18.88
+                  "x": 18.88,
+                  "z": 1,
+                  "name": "MSFT"
                 }, {
                   "y": 10.54,
-                  "x": 17.29
+                  "x": 17.29,
+                  "z": 1,
+                  "name": "MSFT"
                 }, {
                   "y": 12.51,
-                  "x": 4.72
+                  "x": 4.72,
+                  "z": 1,
+                  "name": "MSFT"
                 }, {
                   "y": 10.89,
-                  "x": 18.94
-                }, {
-                  "y": 9.69,
-                  "x": 39.87
-                }, {
-                  "y": 8.74,
-                  "x": 38.88
-                }, {
-                  "y": 6.34,
-                  "x": 31.3
+                  "x": 18.94,
+                  "z": 1,
+                  "name": "MSFT"
                 }, {
                   "y": 6.01,
-                  "x": 22.06
-                }, {
-                  "y": 7.49,
-                  "x": 36.19
-                }, {
-                  "y": -7.93,
-                  "x": 70.24
+                  "x": 22.06,
+                  "z": 1,
+                  "name": "MSFT"
                 }, {
                   "y": -6.87,
-                  "x": 63.67
+                  "x": 63.67,
+                  "z": 1,
+                  "name": "MSFT"
                 }]
-          }]};
+          }, {data: [{
+                                       "y": 9.69,
+                                       "x": 39.87,
+                  "z": 1,
+                  "name": "MSFT"
+                                     }, {
+                                       "y": 8.74,
+                                       "x": 38.88,
+                  "z": 1,
+                  "name": "MSFT"
+                                     }, {
+                                       "y": 6.34,
+                                       "x": 31.3,
+                  "z": 1,
+                  "name": "MSFT"
+                                     }, {"y": 1, "x": 1, "z": 1, "name": "MSFT"}]}]};
 
           return <ReactFC
-            type = 'scatter'
-            width = "600"
-            height = "400"
+            type = 'bubble'
+            width = "1200"
+            height = "800"
             dataFormat = 'JSON'
             dataSource = {dataSource}
             />;
