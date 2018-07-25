@@ -7,75 +7,26 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {data: []};
-        axios.get("http://localhost:8080/test")
+        axios.get("http://localhost:8080/trend")
             .then(response => this.setState({data: response.data}));
     }
 
     render() {
-//        var chartDataList = [];
-//        this.state.data.forEach(
-//            function(timeSeries) {
-//                chartDataList.push({label: timeSeries.tradingDay.split('T')[0], value: timeSeries.closingPrice});
-//            }
-//        );
-//
-//        var chartData = {
-//            chart: {},
-//            data: chartDataList
-//        };
-//        return <ReactFC
-//               type = "line"
-//               width = "1400"
-//               height = "800"
-//               className = "fc-column2d"
-//               dataFormat = "JSON"
-//               dataSource = {chartData}/>;
 
-//          var data = [{
-//               "y": 14.42,
-//               "x": 18.88
-//             }, {
-//               "y": 10.54,
-//               "x": 17.29
-//             }, {
-//               "y": 12.51,
-//               "x": 4.72
-//             }, {
-//               "y": 10.89,
-//               "x": 18.94
-//             }, {
-//               "y": 9.69,
-//               "x": 39.87
-//             }, {
-//               "y": 8.74,
-//               "x": 38.88
-//             }, {
-//               "y": 6.34,
-//               "x": 31.3
-//             }, {
-//               "y": 6.01,
-//               "x": 22.06
-//             }, {
-//               "y": 7.49,
-//               "x": 36.19
-//             }, {
-//               "y": -7.93,
-//               "x": 70.24
-//             }, {
-//               "y": -6.87,
-//               "x": 63.67
-//             }];
-
+    if (this.state.data.length === 0) {
+        console.log();
+        return <div>Loading...</div>;
+    }
           var dataSource = {
               chart: {"caption": "K-means clustering",
-                "bubbleScale": 0.25,
-                "plotTooltext": "$name ; cluster:  $zvalue%",
+                "bubbleScale": 0.2,
+                "plotTooltext": "$name ; cluster:  $yvalue%",
 //                      "subcaption": "in higher education",
 //                      "yaxisname": "20 year average-annual return on degree, %",
 //                      "xaxisname": "Admission rate, %",
                       "anchorBgColor": "#FF0000",
                     "xAxisMinValue": "23",
-                    "xAxisMaxValue": "95",
+                    "xAxisMaxValue": "40",
                       "yaxismaxvalue": "25",
                       "showzeroplane": "0",
                       "yaxisminvalue": "-15",
@@ -83,56 +34,9 @@ class App extends Component {
                 "showValues":"1",
 //                      "plotTooltext": "<div id='valueDiv'><b>$seriesName</b>, Admission rate % : <b>$xDataValue</b>, Return % : <b>$yDataValue</b></div>"
                       },
-              dataset: [
-              {data: [{
-                  "y": 14.42,
-                  "x": 18.88,
-                  "z": 1,
-                  "name": "MSFT"
-                }, {
-                  "y": 10.54,
-                  "x": 17.29,
-                  "z": 1,
-                  "name": "MSFT"
-                }, {
-                  "y": 12.51,
-                  "x": 4.72,
-                  "z": 1,
-                  "name": "MSFT"
-                }, {
-                  "y": 10.89,
-                  "x": 18.94,
-                  "z": 1,
-                  "name": "MSFT"
-                }, {
-                  "y": 6.01,
-                  "x": 22.06,
-                  "z": 1,
-                  "name": "MSFT"
-                }, {
-                  "y": -6.87,
-                  "x": 63.67,
-                  "z": 1,
-                  "name": "MSFT"
-                }]
-          }, {data: [{
-                                       "y": 9.69,
-                                       "x": 39.87,
-                  "z": 1,
-                  "name": "MSFT"
-                                     }, {
-                                       "y": 8.74,
-                                       "x": 38.88,
-                  "z": 1,
-                  "name": "MSFT"
-                                     }, {
-                                       "y": 6.34,
-                                       "x": 31.3,
-                  "z": 1,
-                  "name": "MSFT"
-                                     }, {"y": 1, "x": 1, "z": 1, "name": "MSFT"}]}]};
+              dataset: this.state.data};
 
-          return <ReactFC
+         return <ReactFC
             type = 'bubble'
             width = "1200"
             height = "800"
