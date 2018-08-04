@@ -17,6 +17,7 @@ class App extends Component {
         console.log();
         return <div>Loading...</div>;
     }
+
           var dataSource = {
               chart: {"caption": "K-means clustering",
                 "bubbleScale": 0.2,

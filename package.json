@@ -4,12 +4,14 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "create-react-class": "^15.6.3",
     "fusioncharts": "^3.13.0",
     "npm": "^6.3.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-fusioncharts": "^1.0.5",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-slider": "^0.11.2"
   },
   "scripts": {
     "start": "react-scripts start",
