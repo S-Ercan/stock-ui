@@ -5,7 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "fusioncharts": "^3.13.0",
-    "npm": "^6.2.0",
+    "npm": "^6.3.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-fusioncharts": "^1.0.5",
