@@ -12,7 +12,11 @@ class Slider extends Component {
     }
 
     render() {
-        return <ReactSlider defaultValue={[0, 100]} withBars />;
+        return <ReactSlider
+            defaultValue={[0, 100]}
+            withBars
+            onChange={function() {console.log(arguments[0][0], arguments[0][1]);}}
+        />;
     }
 }
 
