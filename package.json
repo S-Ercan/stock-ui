@@ -4,14 +4,18 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
     "create-react-class": "^15.6.3",
     "fusioncharts": "^3.13.0",
     "npm": "^6.4.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-fusioncharts": "^1.0.5",
-    "react-scripts": "1.1.4",
-    "react-slider": "^0.11.2"
+    "react-numeric-input": "^2.2.3",
+    "react-scripts": "^1.1.5",
+    "react-slider": "^0.11.2",
+    "rn-spinner": "^0.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
