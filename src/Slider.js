@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ReactSlider from 'react-slider';
 import './Slider.css';
 
@@ -7,7 +7,9 @@ class Slider extends Component {
         return <ReactSlider
             defaultValue={[0, 100]}
             withBars
-            onChange={function() {console.log(arguments[0][0], arguments[0][1]);}}
+            onChange={function () {
+                console.log(arguments[0][0], arguments[0][1]);
+            }}
         />;
     }
 }

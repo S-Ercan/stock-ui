@@ -11,11 +11,13 @@ class NumberSpinner extends React.Component {
 
     render() {
         return <NumericInput
-                    min={1}
-                    max={8}
-                    value={4}
-                    onChange={function(valueAsNumber, valueAsString, input) {console.log(valueAsNumber + "," + valueAsString + "," + input);}}
-                />;
+            min={1}
+            max={8}
+            value={4}
+            onChange={function (valueAsNumber, valueAsString, input) {
+                console.log(valueAsNumber + "," + valueAsString + "," + input);
+            }}
+        />;
     }
 };
 

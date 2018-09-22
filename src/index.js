@@ -6,7 +6,7 @@ import Slider from './Slider';
 import NumberSpinner from './NumberPicker';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-ReactDOM.render(<Slider />, document.getElementById('slider'));
-ReactDOM.render(<NumberSpinner />, document.getElementById('number-picker'));
+ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<Slider/>, document.getElementById('slider'));
+ReactDOM.render(<NumberSpinner/>, document.getElementById('number-picker'));
 registerServiceWorker();
