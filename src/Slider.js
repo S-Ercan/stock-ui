@@ -10,7 +10,7 @@ class Slider extends Component {
             max={-10}
             defaultValue={[-60]}
             withBars
-            onChange={function () {
+            onAfterChange={function () {
                 PubSub.publish('daysAgoTopic', arguments[0]);
             }}
         />;

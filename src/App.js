@@ -20,11 +20,8 @@ class App extends Component {
             self.loadData();
         };
 
-        // add the function to the list of subscribers for a particular topic
-        // we're keeping the returned token, in order to be able to unsubscribe
-        // from the topic later on
-        var token = PubSub.subscribe('daysAgoTopic', daysAgoListener);
-        var token = PubSub.subscribe('numClustersTopic', numClustersListener);
+        var daysAgoTopicSubscriptionToken = PubSub.subscribe('daysAgoTopic', daysAgoListener);
+        var numClustersTopicSubscriptionToken = PubSub.subscribe('numClustersTopic', numClustersListener);
     }
 
     loadData() {
@@ -33,9 +30,7 @@ class App extends Component {
     }
 
     render() {
-
         if (this.state.data.length === 0) {
-            console.log();
             return <div>Loading...</div>;
         }
 
