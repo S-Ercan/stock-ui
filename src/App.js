@@ -1,13 +1,30 @@
 import React, {Component} from 'react';
 import ReactFC from 'react-fusioncharts';
 import axios from 'axios';
+import PubSub from 'pubsub-js';
 import './App.css';
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {data: []};
-        axios.get("http://localhost:8080/trend")
+        this.loadData(5);
+        var self = this;
+
+        // create a function to subscribe to topics
+        var mySubscriber = function (msg, data) {
+            console.log( msg, data );
+            self.loadData(data);
+        };
+
+        // add the function to the list of subscribers for a particular topic
+        // we're keeping the returned token, in order to be able to unsubscribe
+        // from the topic later on
+        var token = PubSub.subscribe('trendData', mySubscriber);
+    }
+
+    loadData(numClusters) {
+        axios.get("http://localhost:8080/trendWithNumberOfClusters?numberOfClusters=" + numClusters)
             .then(response => this.setState({data: response.data}));
     }
 

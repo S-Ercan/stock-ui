@@ -9,6 +9,7 @@
     "create-react-class": "^15.6.3",
     "fusioncharts": "^3.13.0",
     "npm": "^6.4.0",
+    "pubsub-js": "^1.7.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-fusioncharts": "^1.0.5",
