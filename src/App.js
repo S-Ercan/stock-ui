@@ -37,7 +37,7 @@ class App extends Component {
         var dataSource = {
             chart: {
                 "caption": "K-means clustering",
-                "bubbleScale": 0.2,
+                "bubbleScale": 0.33,
                 "plotTooltext": "$name ; cluster:  $yvalue%",
 //                      "subcaption": "in higher education",
 //                      "yaxisname": "20 year average-annual return on degree, %",
