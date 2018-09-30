@@ -9,8 +9,7 @@ class NumberSpinner extends React.Component {
             max={8}
             value={5}
             onChange={function (valueAsNumber, valueAsString, input) {
-                console.log(valueAsNumber + "," + valueAsString + "," + input);
-                PubSub.publish('trendData', valueAsNumber);
+                PubSub.publish('numClustersTopic', valueAsNumber);
             }}
         />;
     }
