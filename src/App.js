@@ -24,7 +24,7 @@ class App extends Component {
     }
 
     loadData(numClusters) {
-        axios.get("http://18.216.85.76:8080/trendWithNumberOfClusters?numberOfClusters=" + numClusters)
+        axios.get("http://18.217.54.78:8080/trendWithNumberOfClusters?numberOfClusters=" + numClusters)
             .then(response => this.setState({data: response.data}));
     }
 
