@@ -7,38 +7,37 @@ import './App.css';
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {data: []};
-        this.loadData(5);
+        this.state = {data: [], numClusters: 5, daysAgo: -60};
+        this.loadData();
         var self = this;
 
-        // create a function to subscribe to topics
-        var mySubscriber = function (msg, data) {
-            console.log( msg, data );
-            self.loadData(data);
+        var daysAgoListener = function (msg, data) {
+            self.setState({daysAgo: data});
+            self.loadData();
+        };
+        var numClustersListener = function (msg, data) {
+            self.setState({numClusters: data});
+            self.loadData();
         };
 
-        // add the function to the list of subscribers for a particular topic
-        // we're keeping the returned token, in order to be able to unsubscribe
-        // from the topic later on
-        var token = PubSub.subscribe('trendData', mySubscriber);
+        var daysAgoTopicSubscriptionToken = PubSub.subscribe('daysAgoTopic', daysAgoListener);
+        var numClustersTopicSubscriptionToken = PubSub.subscribe('numClustersTopic', numClustersListener);
     }
 
-    loadData(numClusters) {
-        axios.get("http://18.217.54.78:8080/trendWithNumberOfClusters?numberOfClusters=" + numClusters)
+    loadData() {
+        axios.get("http://18.217.54.78:8080/trendFromDaysAgoAndWithNumberOfClusters?daysAgo=" + this.state.daysAgo + "&numberOfClusters=" + this.state.numClusters)
             .then(response => this.setState({data: response.data}));
     }
 
     render() {
-
         if (this.state.data.length === 0) {
-            console.log();
             return <div>Loading...</div>;
         }
 
         var dataSource = {
             chart: {
                 "caption": "K-means clustering",
-                "bubbleScale": 0.2,
+                "bubbleScale": 0.33,
                 "plotTooltext": "$name ; cluster:  $yvalue%",
 //                      "subcaption": "in higher education",
 //                      "yaxisname": "20 year average-annual return on degree, %",

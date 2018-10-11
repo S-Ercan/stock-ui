@@ -1,14 +1,17 @@
 import React, {Component} from 'react';
 import ReactSlider from 'react-slider';
+import PubSub from 'pubsub-js';
 import './Slider.css';
 
 class Slider extends Component {
     render() {
         return <ReactSlider
-            defaultValue={[0, 100]}
+            min={-60}
+            max={-10}
+            defaultValue={[-60]}
             withBars
-            onChange={function () {
-                console.log(arguments[0][0], arguments[0][1]);
+            onAfterChange={function () {
+                PubSub.publish('daysAgoTopic', arguments[0]);
             }}
         />;
     }
