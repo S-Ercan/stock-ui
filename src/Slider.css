@@ -13,7 +13,7 @@
 .handle {
     font-size: 0.9em;
     text-align: center;
-    background-color: blue;
+    background-color: black;
     color: white;
     cursor: pointer;
 }
@@ -28,7 +28,7 @@
 }
 
 .bar.bar-1 {
-    background: #f00;
+    background: #bbb;
 }
 
 .bar.bar-2 {
