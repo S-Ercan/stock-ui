@@ -6,9 +6,9 @@ import './Slider.css';
 class Slider extends Component {
     render() {
         return <ReactSlider
-            min={-60}
+            min={-180}
             max={-10}
-            defaultValue={[-60]}
+            defaultValue={[-180]}
             withBars
             onAfterChange={function () {
                 PubSub.publish('daysAgoTopic', arguments[0]);

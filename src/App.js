@@ -7,7 +7,7 @@ import './App.css';
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {data: [], numClusters: 5, daysAgo: -60};
+        this.state = {data: [], numClusters: 5, daysAgo: -180};
         this.loadData();
         var self = this;
 
@@ -25,7 +25,7 @@ class App extends Component {
     }
 
     loadData() {
-        axios.get("http://18.217.54.78:8080/trendFromDaysAgoAndWithNumberOfClusters?daysAgo=" + this.state.daysAgo + "&numberOfClusters=" + this.state.numClusters)
+        axios.get("http://localhost:8080/trendFromDaysAgoAndWithNumberOfClusters?daysAgo=" + this.state.daysAgo + "&numberOfClusters=" + this.state.numClusters)
             .then(response => this.setState({data: response.data}));
     }
 
