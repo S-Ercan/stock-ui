@@ -38,7 +38,7 @@ class App extends Component {
             chart: {
                 "caption": "K-means clustering",
                 "bubbleScale": 0.33,
-                "plotTooltext": "$name ; cluster:  $yvalue%",
+                "plotTooltext": "$name ; difference over period:  $yvalue%",
 //                      "subcaption": "in higher education",
 //                      "yaxisname": "20 year average-annual return on degree, %",
 //                      "xaxisname": "Admission rate, %",
